@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MM Rates</string>
+    <string name="offline_title">MM Rates is offline</string>
+    <string name="offline_message">Check the web server or your internet connection, then try again.</string>
+    <string name="retry">Retry</string>
+    <string name="pull_to_refresh">Pull to refresh</string>
+    <string name="release_to_refresh">Release to refresh</string>
+</resources>

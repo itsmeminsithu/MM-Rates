@@ -1,0 +1,2 @@
+MM_RATES_WEB_URL = https:/$()/mmrates.minsithu.org
+PRODUCT_BUNDLE_IDENTIFIER = org.minsithu.mmrates

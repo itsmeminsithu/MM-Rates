@@ -13,10 +13,10 @@
 For `main`:
 
 - Require a pull request before merging.
-- Require Web CI, Android CI, iOS CI, and Repository Check.
+- Do not require CI checks that do not exist yet: this repository contains no `.github/workflows`. If CI is wanted, add the workflows manually through the GitHub web UI first, then require the checks they provide.
 - Require branches to be up to date.
 - Block force pushes and deletions.
 
 ## Secrets
 
-The included workflows do not need production secrets. Add deployment or store secrets only when a real deployment workflow is created. Use GitHub Environments for production approvals.
+There are no workflows in this repository, so no workflow secrets are needed. Add deployment or store secrets only when a real deployment workflow is created. Use GitHub Environments for production approvals.
