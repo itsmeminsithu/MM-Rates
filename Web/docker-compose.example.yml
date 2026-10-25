@@ -1,0 +1,17 @@
+services:
+  mm-rates:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DB_PATH: /data/mmrates.db
+      TRUST_PROXY: "true"
+    volumes:
+      - mmrates-data:/data
+      - ./backups:/app/backups
+    ports:
+      - "127.0.0.1:3000:3000"
+
+volumes:
+  mmrates-data:

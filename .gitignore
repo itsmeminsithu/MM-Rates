@@ -1,0 +1,25 @@
+# Dependencies and build output
+node_modules/
+Android/build/
+Android/.gradle/
+Android/local.properties
+*.apk
+*.aab
+
+# Runtime data and secrets - never commit these
+.env
+Web/data/
+Web/backups/
+*.db
+*.log
+nohup.out
+
+# Archives - source lives extracted in Web/, Android/, iOS/, scripts/, not in zips
+*.zip
+
+# macOS / editor
+.DS_Store
+__MACOSX/
+
+# iOS
+DerivedData/

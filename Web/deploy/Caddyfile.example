@@ -1,0 +1,21 @@
+mmrates.minsithu.org {
+  encode zstd gzip
+
+  @api path /v1/*
+  header {
+    -Server
+  }
+
+  reverse_proxy 127.0.0.1:3000 {
+    header_up X-Real-IP {remote_host}
+  }
+
+  log {
+    output file /var/log/caddy/mmrates-access.log {
+      roll_size 20MiB
+      roll_keep 5
+      roll_keep_for 168h
+    }
+    format json
+  }
+}

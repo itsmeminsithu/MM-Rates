@@ -1,0 +1,2 @@
+MM_RATES_WEB_URL = http:/$()/127.0.0.1:3000
+PRODUCT_BUNDLE_IDENTIFIER = org.minsithu.mmrates.debug

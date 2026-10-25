@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MM Rates</title>
+<meta name="description" content="Myanmar Kyat market rates, gold and crypto — updated through the day.">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0F6E56">
+<meta name="color-scheme" content="light dark">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div id="pullRefresh" class="pull-refresh" aria-live="polite" aria-hidden="true">
+  <span class="pull-refresh-icon" aria-hidden="true">↓</span>
+  <span id="pullRefreshText">Pull to refresh</span>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <div>
+      <span class="brand-name">MM Rates</span>
+      <span class="brand-sub">Myanmar market</span>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <button id="syncBtn" class="icon-button sync-btn" aria-label="Sync rates now" title="Sync rates">
+      <span class="sync-ic" aria-hidden="true">↻</span>
+      <span id="syncLabel" class="sr-only">Sync</span>
+    </button>
+    <button id="notiBtn" class="icon-button notification-button" aria-label="Notification settings" title="Notifications">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+      <span id="notiBadge" class="header-status-dot" hidden></span>
+    </button>
+    <button id="profileBtn" class="header-avatar" aria-label="Open profile and settings" title="Profile">
+      <span id="headerInitials">☺</span>
+      <span id="profileUpdateBadge" class="update-dot" hidden></span>
+    </button>
+  </div>
+</header>
+
+<p id="updatedLine" class="updated-line" hidden></p>
+
+<main id="view" class="view" aria-live="polite"></main>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <h2 id="sheetTitle"></h2>
+      <button id="sheetClose" class="chip" aria-label="Close">✕</button>
+    </div>
+    <div id="sheetBig" class="sheet-big"></div>
+    <div class="range-row" id="rangeRow"></div>
+    <div id="chartWrap" class="chart-wrap"></div>
+    <p class="fineprint" id="sheetNote"></p>
+  </div>
+</div>
+
+<div id="profileOverlay" class="profile-overlay" hidden>
+  <section class="profile-drawer" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <header class="profile-drawer-head">
+      <div>
+        <p class="drawer-eyebrow" id="profileEyebrow">Account</p>
+        <h2 id="profileTitle">Profile &amp; Settings</h2>
+      </div>
+      <button id="profileClose" class="icon-button" aria-label="Close profile">✕</button>
+    </header>
+    <div id="profileContent" class="profile-content"></div>
+  </section>
+</div>
+
+<nav class="tabbar" aria-label="Sections">
+  <button class="tab active" data-tab="rates"><span class="tab-ic">⇅</span><span data-i18n="tab_rates"></span></button>
+  <button class="tab" data-tab="convert"><span class="tab-ic">⇄</span><span data-i18n="tab_convert"></span></button>
+  <button class="tab" data-tab="gold"><span class="tab-ic">◉</span><span data-i18n="tab_gold"></span></button>
+  <button class="tab" data-tab="crypto"><span class="tab-ic">₿</span><span data-i18n="tab_crypto"></span></button>
+</nav>
+
+<script src="/app.js"></script>
+</body>
+</html>

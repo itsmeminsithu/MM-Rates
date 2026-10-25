@@ -2,7 +2,7 @@
 
 > Myanmar exchange rates, CBM official references, Yangon gold, crypto, conversion, charts, bilingual English/Burmese UI, and transparent freshness information — delivered as Web, Android, and iOS projects from one repository.
 
-![MM Rates app preview](GitHub/APP_PREVIEW.png)
+![MM Rates app preview](APP_PREVIEW.png)
 
 **New here?** See [`QUICK_START.md`](QUICK_START.md), or double-click `RUN_DEMO_ON_MAC.command`.
 
@@ -13,8 +13,10 @@
 | [`Web/`](Web/) | Canonical Node.js API, SQLite history collector, PWA, admin endpoints, Docker, PM2, Caddy, tests, privacy policy, and methodology page |
 | [`Android/`](Android/) | Android Studio project that presents the same Web experience in a secured native WebView shell with native refresh, sharing, and offline recovery |
 | [`iOS/`](iOS/) | SwiftUI/Xcode project using WKWebView with the same interface, native refresh, sharing, safe external links, and offline recovery |
-| [`GitHub/`](GitHub/) | Repository setup, upload instructions, release checklist, store copy, and preview assets |
-| [`.github/`](.github/) | CI workflows, Dependabot, issue templates, and pull-request template |
+| [`scripts/`](scripts/) | Repository structure check (`verify-repository.sh`) |
+| Root docs (`QUICK_START.md`, `RELEASE_CHECKLIST.md`, `REPOSITORY_SETUP.md`, `STORE_LISTING.md`, `Makefile`) | Setup, release checklist, store copy, and build/demo commands |
+
+There is no `GitHub/` folder and no `.github/` folder in this repository. The setup and release documents live at the repository root, and no CI workflow is included (see `REPOSITORY_SETUP.md`).
 
 ## Architecture
 
@@ -81,18 +83,13 @@ Open [`iOS/MMRates.xcodeproj`](iOS/MMRates.xcodeproj) in Xcode. Debug defaults t
 
 See [`iOS/README.md`](iOS/README.md).
 
-## GitHub upload
+## Live preview
 
-Read [`GitHub/UPLOAD_TO_GITHUB.md`](GitHub/UPLOAD_TO_GITHUB.md), or run:
+There is no GitHub Pages preview for this repository. The Web app is not static HTML: `Web/public/app.js` calls the Node.js API (`/v1/latest`, `/v1/history`, `/v1/refresh`), so serving `Web/public/` alone from Pages would leave the UI without data. Use the local demo above for a UI preview (mock rates only); the real app needs the Node.js server running.
 
-```bash
-git init
-git add .
-git commit -m "Initial MM Rates multiplatform release"
-git branch -M main
-git remote add origin https://github.com/itsmeminsithu/mm-rates.git
-git push -u origin main
-```
+## Repository status
+
+This repository is already published. The `Web/`, `Android/`, `iOS/`, and `scripts/` source trees were previously stored only as zip files at the root; they are now extracted in place and the zips are removed. See the pull request description for the binary files that could not be pushed through the GitHub connector and still need to be added.
 
 ## Important data warning
 

@@ -1,0 +1,13 @@
+{
+  "info": "Central Bank of Myanmar",
+  "description": "Official Website of Central Bank of Myanmar",
+  "timestamp": "1783670400",
+  "rates": {
+    "USD": "2100.00",
+    "EUR": "2402.61",
+    "THB": "63.03",
+    "SGD": "1626.84",
+    "JPY": "1300.23",
+    "KRW": "139.71"
+  }
+}

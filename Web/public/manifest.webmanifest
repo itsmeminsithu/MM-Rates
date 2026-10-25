@@ -1,0 +1,15 @@
+{
+  "name": "MM Rates",
+  "short_name": "MM Rates",
+  "description": "Myanmar Kyat market rates, CBM reference rates, Yangon gold and crypto — built by Min SiThu.",
+  "categories": ["finance", "utilities"],
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1210",
+  "theme_color": "#0F6E56",
+  "icons": [
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
