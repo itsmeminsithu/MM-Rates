@@ -1,22 +1,22 @@
 # MM Rates
 
-> Myanmar exchange rates, CBM official references, Yangon gold, crypto, conversion, charts, bilingual English/Burmese UI, and transparent freshness information — delivered as Web, Android, and iOS projects from one repository.
+Myanmar exchange rates in one place: CBM official reference rates, Yangon gold, crypto, conversion, and charts, with an English/Burmese UI and a note on how old each rate is. One repository holds the Web app, the Android project, and the iOS project.
 
 ![MM Rates app preview](GitHub/APP_PREVIEW.png)
 
-**New here?** See [`QUICK_START.md`](QUICK_START.md), or double-click `RUN_DEMO_ON_MAC.command`.
+New to it? Read [`QUICK_START.md`](QUICK_START.md), or double-click `RUN_DEMO_ON_MAC.command`.
 
 ## Repository structure
 
 | Folder | Purpose |
 |---|---|
-| [`Web/`](Web/) | Canonical Node.js API, SQLite history collector, PWA, admin endpoints, Docker, PM2, Caddy, tests, privacy policy, and methodology page |
-| [`Android/`](Android/) | Android Studio project that presents the same Web experience in a secured native WebView shell with native refresh, sharing, and offline recovery |
-| [`iOS/`](iOS/) | SwiftUI/Xcode project using WKWebView with the same interface, native refresh, sharing, safe external links, and offline recovery |
-| [`GitHub/`](GitHub/) | Repository setup, upload instructions, release checklist, store copy, and preview assets |
-| [`.github/`](.github/) | CI workflows, Dependabot, issue templates, and pull-request template |
+| [`Web/`](Web/) | Node.js API, SQLite history collector, PWA, admin endpoints, Docker, PM2, Caddy, tests, privacy policy, methodology page |
+| [`Android/`](Android/) | Android Studio project. Same Web app in a native WebView shell, with native refresh, sharing, and offline recovery |
+| [`iOS/`](iOS/) | SwiftUI/Xcode project using WKWebView. Same interface, native refresh, sharing, safe external links, offline recovery |
+| [`GitHub/`](GitHub/) | Repository setup, upload instructions, release checklist, store copy, preview assets |
+| [`.github/`](.github/) | CI workflows, Dependabot, issue templates, pull-request template |
 
-## Architecture
+## How it fits together
 
 ```text
 Android app ─┐
@@ -30,18 +30,16 @@ Android app ─┐
                                                └─ manual Yangon gold
 ```
 
-The PWA is the canonical product. Android and iOS are native shells around the same deployed HTTPS app, so all platforms share one UI, one API contract, one profile/settings experience, and one release of the rate logic.
+The PWA is the main product. Android and iOS are shells around the same deployed HTTPS app, so every platform uses the same UI, the same API, the same profile/settings, and the same rate logic.
 
-## Fastest UI preview — no npm required
+## UI preview, no npm needed
 
 ```bash
 cd Web
 python3 scripts/demo_server.py
 ```
 
-Open `http://localhost:3000`.
-
-This uses mock rates and does not collect production data.
+Open `http://localhost:3000`. This uses mock rates and collects no production data.
 
 ## Run the real Web backend
 
@@ -55,11 +53,11 @@ npm start
 
 Open `http://localhost:3000`.
 
-Production requires a strong `ADMIN_TOKEN`, HTTPS, backups, monitoring, and current verified market data. Read [`Web/DEPLOYMENT.md`](Web/DEPLOYMENT.md).
+Production needs a strong `ADMIN_TOKEN`, HTTPS, backups, monitoring, and current verified market data. Read [`Web/DEPLOYMENT.md`](Web/DEPLOYMENT.md).
 
 ## Android
 
-Open [`Android/`](Android/) in Android Studio. Debug defaults to `http://10.0.2.2:3000`, which routes the Android emulator to the host computer.
+Open [`Android/`](Android/) in Android Studio. Debug defaults to `http://10.0.2.2:3000`, which points the Android emulator at the host machine.
 
 ```bash
 cd Android
@@ -94,9 +92,9 @@ git remote add origin https://github.com/itsmeminsithu/mm-rates.git
 git push -u origin main
 ```
 
-## Important data warning
+## Data warning
 
-MM Rates displays aggregated public reference rates. It is not a transaction quote. The automatic community market feed may be stale and is rejected when its provider timestamp exceeds the configured age limit. Use a verified manual fallback or integrate another reliable market source before public launch.
+MM Rates shows aggregated public reference rates. It is not a transaction quote. The automatic community market feed can go stale, and it is rejected when its provider timestamp is older than the configured age limit. Use a verified manual fallback, or another market source you trust, before a public launch.
 
 ## Version
 
